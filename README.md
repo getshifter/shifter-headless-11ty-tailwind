@@ -1,6 +1,6 @@
 # Shifter Headless 11ty Starter Template
 
-![](https://camo.githubusercontent.com/fb45684b4c95654c90d8c4b4f93b495d3c73e706824b57b6d6f2a448d2fbc16d/68747470733a2f2f63646e2e676574736869667465722e636f2f363937396432633230653066313463343666366236656163383635396336313336613062346136372f75706c6f6164732f323032332f30332f312d31303234783632362e706e67)
+![](https://github.com/getshifter/shifter-headless-11ty-tailwind/assets/1872327/bfcfa6ad-4eeb-45f9-978a-9b64ea9abeb8)
 
 The Shifter Headless 11ty Starter Template is a starting point for building headless WordPress websites using 11ty and Shifter. It offers a solid foundation for creating fast, scalable, and SEO-friendly websites with a decoupled frontend and WordPress as a headless CMS.
 
