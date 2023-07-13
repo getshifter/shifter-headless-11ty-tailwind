@@ -13,7 +13,7 @@ Key Features:
 
 These features provide a solid foundation for building headless WordPress websites using 11ty and Shifter. The template allows you to create fast, scalable, and SEO-friendly websites with a decoupled frontend and WordPress as the content management system.
 
-[Live Demo](https://clever-newton-cbb08a.netlify.app)
+[Live Demo](https://shifter-headless-11ty-tailwind.netlify.app)
 
 ---
 
