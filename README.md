@@ -1,75 +1,65 @@
-# Minimal 11ty Starter
+# Shifter Headless 11ty Starter Template
 
+![](https://camo.githubusercontent.com/fb45684b4c95654c90d8c4b4f93b495d3c73e706824b57b6d6f2a448d2fbc16d/68747470733a2f2f63646e2e676574736869667465722e636f2f363937396432633230653066313463343666366236656163383635396336313336613062346136372f75706c6f6164732f323032332f30332f312d31303234783632362e706e67)
 
-![Image showing the demo website](https://user-images.githubusercontent.com/3286735/100862193-26c1bd00-3493-11eb-8120-61a0d822588b.png)
+The Shifter Headless 11ty Starter Template is a starting point for building headless WordPress websites using 11ty and Shifter. It offers a solid foundation for creating fast, scalable, and SEO-friendly websites with a decoupled frontend and WordPress as a headless CMS.
 
+Key Features:
 
-A *very* minimal [eleventy](https://11ty.io/) starter using [Tailwind CSS](https://tailwindcss.com/) for styling.
+- Minimalistic design
+- Automatic active states in the navigation based on the current URL
+- Easy addition of pages to the navigation
+- Simple blog structure
+- Example of including JSON data
+- Built with Tailwind CSS
 
-It features a smart navigation component that sets active states automatically.
-
-For beginners and/or when you need a simple static site and don't want to duplicate your navigation header and set active states for the nth time.
-
-## Features
-🦴 As minimal as possible  
-⚡️ Active states in the navigation are automatically set based on the current url.  
-💨 Add a couple of lines to any page and it will appear in the navigation. (Check how to below)  
-🗓 A very simple blog structure because why not  
-🍪 Example for including json data on contact page  
-💜 Tailwind CSS
-
-
-### [Live Demo](https://clever-newton-cbb08a.netlify.app)  
+[Live Demo](https://clever-newton-cbb08a.netlify.app)
 
 ---
 
 ## Getting Started
 
-
-#### 1. Clone this repo
-
-```
-git clone git@github.com:tomreinert/minimal-11ty-tailwind-starter.git mysite
-```
-#### 2. Change into the working directory
+1. Clone this repository:
 
 ```
-cd mysite
+git clone https://github.com/getshifter/shifter-headless-11ty-tailwind.git site
 ```
 
-#### 3. Install dependencies
+2. Change into the working directory:
+
+```
+cd site
+```
+
+3. Install dependencies:
 
 ```
 npm install
 ```
 
-#### 4. Work locally
-Watches for changes and serves locally on http://localhost:8080
+4. Start local development server:
 
 ```
 npm run serve
 ```
 
-#### 5. Create a production build
+This command watches for changes and serves the site locally on http://localhost:8080.
+
+5. Create a production build:
 
 ```
 npm run build
 ```
 
-
+---
 
 ## How To: Navigation
 
-The top navigation is the only *feature* in this starter and lives in `/src/_includes/components/navigation.njk`.  
+The top navigation is the main feature of this starter template and can be found in `/src/_includes/components/navigation.njk`.
 
-It looks for the eleventyNavigation object in pages and adds them to the navigation bar. It also checks whether the site's url is in the currently opened url and highlights the navigation item accordingly. This even works for subpages. So if you're on `/blog/post/` the **Blog** nav item will still be active.
+To add links to the navigation, add the `eleventyNavigation` object to any page with the desired order:
 
-
-### Adding links to the navigation
-Add the `eleventyNavigation` object to any page and it will appear in the navigation. Optionally set the order of your items.
-Check the [11ty docs](https://www.11ty.dev/docs/plugins/navigation/) for more information about the navigation plugin.
-
-```
+```yaml
 ---
 eleventyNavigation:
   key: Your Page Name
@@ -77,48 +67,24 @@ eleventyNavigation:
 ---
 ```
 
+The navigation bar will automatically include the pages specified in the `eleventyNavigation` object. The active state will be highlighted based on the currently opened URL, even for subpages.
 
-### Changing the navigation item styles
-The script in `/_includes/components/navigation.njk` checks if a navigation item is active and styles it accordingly.
-Let's dissect the code:
+To change the styles of the navigation items, modify the code in `/_includes/components/navigation.njk`.
 
-```
-<a
- href="{{ entry.url }}"
-
- // Base styles for navigation items
- class="py-1 px-2 rounded mr-4 inline-block
-
- // Styles for the active navigation item
- {{'bg-white text-black' if entry.url in page.url
-
- // Styles for default navigation item
- else 'text-gray-400 hover:text-gray-100'}}">
- {{ entry.title }}
-</a>
-```
-
-
+---
 
 ## How To: Blog
 
-Add a page in `_src/blog/posts` and it will appear in the post list.
+To add a blog post, create a new file in `_src/blog/posts`. The post will automatically appear in the post list.
+
+---
 
 ## Images
 
-Put your images into `_src/img` and add them to your markup like so:
-```
+Place your images in `_src/img` and reference them in your markup like this:
+
+```html
 <img src="/img/example-image.jpg">
 ```
 
-
-
-## Credits
-
-[Bryan L. Robinson](https://bryanlrobinson.com/blog/using-nunjucks-if-expressions-to-create-an-active-navigation-state-in-11ty/) for explaining how to create the active navigation state
-
- https://statickit.com/guides/eleventy-tailwind - I set up the project according to this guide
-
- https://11ty.io/
-
- https://tailwindcss.com
+---
