@@ -6,12 +6,12 @@ The Shifter Headless 11ty Starter Template is a starting point for building head
 
 Key Features:
 
-- Minimalistic design
-- Automatic active states in the navigation based on the current URL
-- Easy addition of pages to the navigation
-- Simple blog structure
-- Example of including JSON data
-- Built with Tailwind CSS
+- Built with 11ty: A static site generator that transforms templates into HTML, CSS, and JavaScript.
+- Headless WordPress: Utilize WordPress as a headless CMS to manage content.
+- Shifter: Seamless integration with Shifter, a serverless WordPress hosting and deployment platform.
+- Scalable architecture: Easily scale your website as your content grows and traffic increases.
+
+These features provide a solid foundation for building headless WordPress websites using 11ty and Shifter. The template allows you to create fast, scalable, and SEO-friendly websites with a decoupled frontend and WordPress as the content management system.
 
 [Live Demo](https://clever-newton-cbb08a.netlify.app)
 
