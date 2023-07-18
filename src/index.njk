@@ -1,7 +1,24 @@
 ---
+pagination:
+  data: wordpress
+  size: 5
 title: Home
 layout: layouts/base.njk
 ---
+
+<div class="my-6 columns-1">
+  {%- for item in pagination.items %}
+    <div class="py-2 columns-1">
+      <h2 class="font-bold">
+        <a href="{{ item.url | url }}">{{ item.title.rendered }}</a>
+      </h2>
+      
+      <p class="text-sm"><time datetime="{{ item.date | htmlDateString }}">{{ item.date }}</time></p>
+      
+      <div class="my-4">{{ item.excerpt.rendered }}</div>
+    </div>
+  {% endfor %}
+</div>
 
 {{ wordpress | dump | safe }}
 
