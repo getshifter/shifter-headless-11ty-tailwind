@@ -1,0 +1,12 @@
+---
+pagination:
+  data: wordpress
+  size: 1
+  alias: wordpress 
+permalink: "wordpress/{{ wordpress.title.rendered | slug }}/"
+layout: layouts/base.njk
+---
+
+<h1 class="font-bold">{{ wordpress.title.rendered }}</h1>
+<time>{{ date | readableDate }}</time>
+<article class="max-w-7xl mx-auto my-6">{{ content | safe }}</article>

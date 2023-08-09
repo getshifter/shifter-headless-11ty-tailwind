@@ -1,7 +1,45 @@
 ---
+pagination:
+  data: wordpress
+  size: 5
 title: Home
 layout: layouts/base.njk
 ---
+
+<div class="my-6 columns-1">
+  {%- for item in pagination.items %}
+    <div class="py-2 columns-1">
+      <h2 class="font-bold">
+        <a href="{{ /wordpress/{{ item.title.rendered | slug }} }}">{{ item.title.rendered }}</a>
+      </h2>
+      
+      <p class="text-sm"><time datetime="{{ item.date | htmlDateString }}">{{ item.date }}</time></p>
+      
+      <div class="my-4">{{ item.excerpt.rendered }}</div>
+    </div>
+  {% endfor %}
+
+  <nav class="columns-3">
+  <ol>
+    <li class="font-bold">
+      {% if pagination.href.previous %}
+        <a href="{{ pagination.href.previous }}">Previous</a>
+      {% else %}Previous{% endif %}
+    </li>
+    {%- for pageEntry in pagination.pages %}
+      <li>
+        <a href="{{ pagination.hrefs[ loop.index0 ] }}" {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page" {% endif %}>
+          {{ loop.index }}</a>
+      </li>
+    {%- endfor %}
+    <li class="font-bold">
+      {% if pagination.href.next %}
+        <a href="{{ pagination.href.next }}">Next</a>
+      {% else %}Next{% endif %}
+    </li>
+  </ol>
+</nav>
+</div>
 
 {{ wordpress | dump | safe }}
 
